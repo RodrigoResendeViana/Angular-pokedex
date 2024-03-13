@@ -1,0 +1,22 @@
+
+<div class="container">
+    <h1>Consulta de pokemons</h1>
+    <div class="card">
+        <input type="text" #pokemonInput>
+        <button (click)="getPokemon(pokemonInput.value.toLowerCase())">Buscar</button>
+        <div class="card__title">
+            <h3>{{ pokemon.name }}</h3>
+        </div>
+        <div class="card__body">
+            <img [src]="pokemon.sprites.front_default" alt="Pokemon">
+        </div>
+        <div class="card__stats">
+            <span 
+                class="card__stats__type {{t.type.name}}"
+                *ngFor="let t of pokemon.types"
+                >
+                {{t.type.name}}
+            </span>
+        </div>
+    </div>
+</div>
